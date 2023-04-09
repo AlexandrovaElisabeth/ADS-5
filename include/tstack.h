@@ -20,7 +20,7 @@ class TStack {
         if (isEmpty())
             throw std::string("Empty");
         else
-            arr[top--] = value;
+            arr[top--];
     }
     const T& get() {
         return arr[top];
