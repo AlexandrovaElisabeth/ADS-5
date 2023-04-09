@@ -43,7 +43,7 @@ std::string infx2pstfx(std::string inf) {
         } else if (n == '(') {
             stack1.push(n);
         } else if (isOper(n)) {
-            while (getPrior(!stack1.isEmpty() && stack1.get()) >= getPrior(n)) {
+            while (!stack1.isEmpty() && getPrior(stack1.get()) >= getPrior(n)) {
                 result += stack1.get();
                 result += ' ';
                 stack1.pop();
