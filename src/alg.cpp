@@ -18,13 +18,13 @@ int getPrior(char oper) {
         return 2;
         break;
     case '-':
-        return 3;
+        return 2;
         break;
     case '*':
-        return 4;
+        return 3;
         break;
     case '/':
-        return 5;
+        return 3;
         break;
     default:
         return -1;
