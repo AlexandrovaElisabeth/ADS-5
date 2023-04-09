@@ -9,12 +9,6 @@ class TStack {
 	int top;
 public:
 	TStack():top(-1){}
-	bool isFull() const {
-		return top == size - 1;
-	}
-	bool isEmpty() const {
-		return top == -1;
-	}
 	void push(T& value) {
 		if (isFull())
 			throw std::string("Full");
@@ -27,6 +21,12 @@ public:
 	}
 	T get() const {
 		return arr[top];
+	}
+	bool isFull() const {
+		return top == size - 1;
+	}
+	bool isEmpty() const {
+		return top == -1;
 	}
 };
 
