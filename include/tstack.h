@@ -8,17 +8,17 @@ class TStack {
     T arr[100];
     int top;
  public:
-    TStack(): top(-1) {}
+    TStack() :top(-1) {}
     void push(T value) {
         if (isFull())
             throw std::string("Full");
-        else 
+        else
             arr[++top] = value;
     }
     const T& pop() {
         if (isEmpty())
             throw std::string("Empty");
-        else 
+        else
             arr[top--] = value;
     }
     const T& get() {
