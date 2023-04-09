@@ -17,12 +17,12 @@ public:
 	}
 	void push(T& value) {
 		if (isFull())
-			throw std:string("Full");
+			throw std::string("Full");
 		else arr[++top] = value;
 	}
 	void pop(T& value) {
 		if (isEmpty())
-			throw std:string("Empty");
+			throw std::string("Empty");
 		else arr[top--] = value;
 	}
 	T get() const {
