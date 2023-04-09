@@ -4,22 +4,22 @@
 #include <string>
 template<typename T, int size>
 class TStack {
-private:
+ private:
     T arr[100];
     int top;
-public:
+ public:
     TStack():top(-1){}
-    void push(T& value) {
+    void push(T value) {
         if (isFull())
             throw std::string("Full");
         else arr[++top] = value;
     }
-    void pop(T& value) {
+    const T& pop() {
         if (isEmpty())
             throw std::string("Empty");
         else arr[top--] = value;
     }
-    T get() const {
+    const T& get() {
         return arr[top];
     }
     bool isFull() const {
