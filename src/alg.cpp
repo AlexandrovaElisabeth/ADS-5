@@ -40,19 +40,16 @@ std::string infx2pstfx(std::string inf) {
         if (n >= '0' && n <= '9') {
             result += n;
             result += ' ';
-        }
-        else if (n=='(') {
+        } else if (n == '(') {
             stack1.push(n);
-        }
-        else if (isOper(n)) {
-            while (getPrior(stack1.get()) >= getPrior(n) && (!stack1.isEmpty())) {
+        } else if (isOper(n)) {
+            while (getPrior(!stack1.isEmpty() && stack1.get()) >= getPrior(n)) {
                 result += stack1.get();
                 result += ' ';
                 stack1.pop();
             }
             stack1.push(n);
-        }
-        else if (n == ')') {
+        } else if (n == ')') {
             while (!stack1.isEmpty() && stack1.get()!= '(') {
                 result += stack1.get();
                 result += ' ';
@@ -75,8 +72,7 @@ int eval(std::string pref) {
     for (int i = 0; i < pref.length(); i++) {
         if (pref[i] <= '9' && pref[i] >= '0') {
             stack2.push(pref[i]-'0');
-        }
-        else if (isOper(pref[i])) {
+        } else if (isOper(pref[i])) {
             int operand1 = stack2.get();
             stack2.pop();
             int operand2 = stack2.get();
